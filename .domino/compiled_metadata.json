@@ -1,110 +1,58 @@
 {
-    "ExampleSimplePiece": {
-        "name": "ExampleSimplePiece",
+    "GathererStoriesFromInstagramPostsCaptionPiece": {
+        "name": "GathererStoriesFromInstagramPostsCaptionPiece",
         "dependency": {
             "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
+            "requirements_file": null
         },
         "tags": [
-            "Example"
+            "Instagram"
         ],
         "style": {
-            "node_label": "Simple Piece",
+            "node_label": "",
             "node_type": "default",
             "node_style": {
-                "backgroundColor": "#ebebeb"
+                "backgroundColor": "#b3cde8"
             },
             "useIcon": true,
-            "icon_class_name": "fas fa-database",
+            "icon_class_name": "fab fa-instagram",
             "iconStyle": {
                 "cursor": "pointer"
             }
         },
-        "description": "This is an example of a simple Domino Piece",
-        "container_resources": {
-            "requests": {
-                "cpu": "100m",
-                "memory": "128Mi"
-            },
-            "limits": {
-                "cpu": "500m",
-                "memory": "512Mi"
-            }
-        },
+        "description": "Sort and gather instagram posts captions based on a list of media info",
         "input_schema": {
             "title": "InputModel",
+            "description": "Piece Inputs",
             "type": "object",
             "properties": {
-                "distribution_name": {
-                    "description": "Name of the distribution to sample from",
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/DistributionType"
-                        }
-                    ]
-                },
-                "distribution_mean": {
-                    "title": "Distribution Mean",
-                    "description": "Distribution mean",
-                    "type": "number"
-                },
-                "distribution_sd": {
-                    "title": "Distribution Sd",
-                    "description": "Distribution standard deviation",
-                    "default": 1.0,
-                    "exclusiveMinimum": 0.0,
-                    "type": "number"
+                "instagram_media_list": {
+                    "title": "Instagram Media List",
+                    "description": "list of Instagram media posts",
+                    "type": "array",
+                    "items": {}
                 }
             },
             "required": [
-                "distribution_name",
-                "distribution_mean"
-            ],
-            "definitions": {
-                "DistributionType": {
-                    "title": "DistributionType",
-                    "description": "An enumeration.",
-                    "enum": [
-                        "gaussian",
-                        "poisson"
-                    ],
-                    "type": "string"
-                }
-            }
+                "instagram_media_list"
+            ]
         },
         "output_schema": {
             "title": "OutputModel",
+            "description": "Piece Outputs",
             "type": "object",
             "properties": {
-                "message": {
-                    "title": "Message",
-                    "description": "Output message to log",
-                    "type": "string"
-                },
-                "sample_result": {
-                    "title": "Sample Result",
-                    "description": "The result of this Piece's processing",
+                "all_captions": {
+                    "title": "All Captions",
+                    "description": "all captions from Instagram media posts",
                     "type": "string"
                 }
             },
             "required": [
-                "message",
-                "sample_result"
+                "all_captions"
             ]
         },
-        "secrets_schema": {
-            "title": "SecretsModel",
-            "type": "object",
-            "properties": {
-                "EXAMPLE_OPERATOR_SECRET_1": {
-                    "title": "Example Operator Secret 1",
-                    "description": "A secret necessary to run this Piece",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "EXAMPLE_OPERATOR_SECRET_1"
-            ]
-        }
+        "secrets_schema": null,
+        "source_url": "https://github.com/giupb/my_custom_domino_pieces/tree/main/pieces/GathererStoriesFromInstagramPostsCaptionPiece"
     }
 }
