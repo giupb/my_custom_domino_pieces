@@ -9,13 +9,13 @@
             "Instagram"
         ],
         "style": {
-            "node_label": "",
+            "node_label": "Gatherer Stories From Instagram Posts Caption",
             "node_type": "default",
             "node_style": {
                 "backgroundColor": "#b3cde8"
             },
             "useIcon": true,
-            "icon_class_name": "fab fa-instagram",
+            "icon_class_name": "fa-brands fa-instagram",
             "iconStyle": {
                 "cursor": "pointer"
             }
