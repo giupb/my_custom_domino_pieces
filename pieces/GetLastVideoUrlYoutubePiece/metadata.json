@@ -1,0 +1,15 @@
+{
+    "name": "GetLastVideoUrlYoutubePiece",
+    "description": "Get the most recent video URL based on a list of youtube videos",
+    "tags": [
+        "Youtube"
+    ],
+    "style": {
+        "node_label": "Get Last Video URL Youtube",
+        "node_type": "default",
+        "node_style": {
+            "backgroundColor": "#b3cde8"
+        },
+        "icon_class_name": "fab fa-youtube"
+    }
+}
