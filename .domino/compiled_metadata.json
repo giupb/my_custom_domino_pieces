@@ -54,5 +54,61 @@
         },
         "secrets_schema": null,
         "source_url": "https://github.com/giupb/my_custom_domino_pieces/tree/main/pieces/GathererStoriesFromInstagramPostsCaptionPiece"
+    },
+    "GetLastVideoUrlYoutubePiece": {
+        "name": "GetLastVideoUrlYoutubePiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": null
+        },
+        "tags": [
+            "Youtube"
+        ],
+        "style": {
+            "node_label": "Get Last Video URL Youtube",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#b3cde8"
+            },
+            "useIcon": true,
+            "icon_class_name": "fab fa-youtube",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Get the most recent video URL based on a list of youtube videos",
+        "input_schema": {
+            "title": "InputModel",
+            "description": "Piece Inputs",
+            "type": "object",
+            "properties": {
+                "youtube_videos_list": {
+                    "title": "Youtube Videos List",
+                    "description": "list of Youtube videos",
+                    "type": "array",
+                    "items": {}
+                }
+            },
+            "required": [
+                "youtube_videos_list"
+            ]
+        },
+        "output_schema": {
+            "title": "OutputModel",
+            "description": "Piece Outputs",
+            "type": "object",
+            "properties": {
+                "last_video_url": {
+                    "title": "Last Video Url",
+                    "description": "last Youtube video url",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "last_video_url"
+            ]
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/giupb/my_custom_domino_pieces/tree/main/pieces/GetLastVideoUrlYoutubePiece"
     }
 }
