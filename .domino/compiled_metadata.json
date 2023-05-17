@@ -15,7 +15,7 @@
                 "backgroundColor": "#b3cde8"
             },
             "useIcon": true,
-            "icon_class_name": "fa-brands fa-instagram",
+            "icon_class_name": "fab fa-instagram",
             "iconStyle": {
                 "cursor": "pointer"
             }
