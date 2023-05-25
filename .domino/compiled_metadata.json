@@ -31,26 +31,55 @@
                     "description": "list of Instagram media posts",
                     "type": "array",
                     "items": {}
+                },
+                "output_type": {
+                    "description": "The type of the output.",
+                    "default": "string",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/OutputTypeType"
+                        }
+                    ]
+                },
+                "output_file_name": {
+                    "title": "Output File Name",
+                    "description": "The name of the file to save all the stories. It works only with Output Type equals to file or file_and_string",
+                    "default": "all_stories.txt",
+                    "type": "string"
                 }
             },
             "required": [
                 "instagram_media_list"
-            ]
+            ],
+            "definitions": {
+                "OutputTypeType": {
+                    "title": "OutputTypeType",
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "string",
+                        "file_and_string"
+                    ],
+                    "type": "string"
+                }
+            }
         },
         "output_schema": {
             "title": "OutputModel",
             "description": "Piece Outputs",
             "type": "object",
             "properties": {
-                "all_captions": {
-                    "title": "All Captions",
-                    "description": "all captions from Instagram media posts",
+                "all_stories_string": {
+                    "title": "All Stories String",
+                    "description": "all captions from Instagram media posts in string format",
+                    "type": "string"
+                },
+                "all_stories_file_path": {
+                    "title": "All Stories File Path",
+                    "description": "all captions from Instagram media posts in txt file format",
                     "type": "string"
                 }
-            },
-            "required": [
-                "all_captions"
-            ]
+            }
         },
         "secrets_schema": null,
         "source_url": "https://github.com/giupb/my_custom_domino_pieces/tree/main/pieces/GathererStoriesFromInstagramPostsCaptionPiece"
